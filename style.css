@@ -129,6 +129,7 @@ section{
     transition-delay: .600s;
 }
 
+
 /* ------------------ */
 /* SECTION 1 - HEADER */
 /* ------------------ */
@@ -163,6 +164,7 @@ section{
     color: var(--primary-background);
 }
 .header nav ul li{
+    align-self: center;
     color: var(--primary-background);
     position: relative;
     padding: 10px 0;
