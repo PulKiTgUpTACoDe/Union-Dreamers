@@ -5,24 +5,6 @@ const closeSidebarButton = document.querySelector('.close-sidebar');
 const sidebar = document.querySelector('.sidebar');
 const sidebarButtonHolder = document.querySelector('.sidebar-button-holder');
 
-// function isClickable(element){
-//     const computedStyle = window.getComputedStyle(element);
-//     if(computedStyle.visibility !== 'visible' || computedStyle.display === 'none'){
-//         return false;
-//     }
-
-//     const rect = element.getBoundingClientRect();
-//     const elementAtPoint = document.elementFromPoint(rect.x +rect.width / 2, rect.y + rect.height / 2);
-//     return elementAtPoint === element;
-// }
-// if(isClickable(openSidebarButton)){
-//     console.log('clickable');
-// }
-// else{
-//     console.log('unclickable');
-// }
-
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting){
@@ -34,27 +16,14 @@ const observer = new IntersectionObserver((entries) => {
     })
 });
 
-const handleOnMouseMove = e => {
-    const { currentTarget: target } = e;
-
-    const rect = target.getBoundingClientRect(),
-        x = e.clientX - rect.left,
-        y = e.clientY - rect.top;
-
-    target.style.setProperty('--mouse-x', `${x}px`);
-    target.style.setProperty('--mouse-y', `${y}px`);
-}
-
-for(const card of document.querySelectorAll('.course-content')){
-    card.onmousemove = e => handleOnMouseMove(e);
-}
-
 hiddenElements.forEach((el) => observer.observe(el));
 
 openSidebarButton.addEventListener('click', ()=>{
     sidebar.style.transform = 'translateX(0)';
     sidebarWrapper.style.transform = 'translateX(0)';
     sidebarButtonHolder.style.display = 'none';
+    console.log(123);
+    
 })
 
 closeSidebarButton.addEventListener('click', ()=>{

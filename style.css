@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Sedan+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+
 /* ----- */
 /* RESET */
 /* ----- */
@@ -10,6 +12,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 
 /* --------------- */
 /* UTILITY CLASSES */
@@ -37,6 +40,7 @@
     font-size: var(--small-font-size);
     position: absolute;
 }
+
 /* ---- */
 /* ROOT */
 /* ---- */
@@ -53,6 +57,7 @@
     
     --primary-font-style: 'Antic Didone';
     --secondary-font-style: 'Mukta';
+
 
     --small-font-size: 12px;
     --medium-font-size: 20px;
@@ -171,7 +176,7 @@ section{
     flex: 1;
     border-radius: 4px;
 }
-.header .holder{
+.header .sidebar-button-holder{
     display: none;
     width: 100%;
     text-align: start;
@@ -521,7 +526,7 @@ section{
     color: var(--secondary-font-color);
     font-family: var(--secondary-font-style);
 }
-.subscribe .holder{
+.subscribe .sidebar-button-holder{
     width: 90%;
     padding: 20px;
     margin: 5% 0;
@@ -543,7 +548,7 @@ section{
         padding-left: 15px;
     }
 }
-.subscribe .holder::before, .subscribe .holder::after{
+.subscribe .sidebar-button-holder::before, .subscribe .sidebar-button-holder::after{
     content: '';
     width: 80%;
     height: 100%;
@@ -556,32 +561,32 @@ section{
     box-shadow: 0 0 5px hsla(0, 0, 50%, .6);
     transition: 0.5s;
 }
-.subscribe .holder::before{
+.subscribe .sidebar-button-holder::before{
     top: -20%;
 }
-.subscribe .holder:hover::before{
+.subscribe .sidebar-button-holder:hover::before{
     top: 0;
 }
-.subscribe .holder::after{
+.subscribe .sidebar-button-holder::after{
     bottom: -20%;
 }
-.subscribe .holder:hover::after{
+.subscribe .sidebar-button-holder:hover::after{
     bottom: 0;
 }
-.subscribe .holder div{
+.subscribe .sidebar-button-holder div{
     grid-template-columns: 1fr 1fr .5fr;
 }
-.subscribe .holder div *{
+.subscribe .sidebar-button-holder div *{
     margin: 0 5px;
     padding: 20px 50px;
     border: 2px solid var(--primary-background);
     border-radius: 50px;
     color: var(--secondary-font-color);
 }
-.subscribe .holder div input::placeholder{
+.subscribe .sidebar-button-holder div input::placeholder{
     color: #fff;
 }
-.subscribe .holder .grid button{
+.subscribe .sidebar-button-holder .grid button{
     background-color: var(--secondary-font-color);
     color: var(--secondary-background-color);
 }
@@ -620,6 +625,17 @@ section{
 /* ------------- */
 /* MEDIA QUERIES */
 /* ------------- */
+@media (max-width : 650px) {
+    .header .sidebar-button-holder{
+        display: block;
+    }
+    .header .open-sidebar{
+        display: inline-block;
+    }
+    .header nav{
+        display: none;
+    }
+}
 @media (max-width : 500px){
     :root{
         --small-font-size: 10px;
@@ -631,15 +647,6 @@ section{
     /* SECTION 1 - HEADER */
     .header{
         padding: 50px 0 0 0;
-    }
-    .header nav{
-        display: none;
-    }
-    .header .holder{
-        display: block;
-    }
-    .header .open-sidebar{
-        display: inline-block;
     }
     .header h1{
         letter-spacing: 4px;
@@ -710,10 +717,10 @@ section{
     .subscribe{
         padding: 50px 0 50px 0;
     }
-    .subscribe .holder:before, .subscribe .holder:after{
+    .subscribe .sidebar-button-holder:before, .subscribe .sidebar-button-holder:after{
         height: 50%;
     }
-    .subscribe .holder div{
+    .subscribe .sidebar-button-holder div{
         grid-template-columns: 1fr;
         gap: 15px;
     }
