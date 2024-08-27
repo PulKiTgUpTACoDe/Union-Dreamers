@@ -4,6 +4,7 @@ const openSidebarButton = document.querySelector('.open-sidebar');
 const closeSidebarButton = document.querySelector('.close-sidebar');
 const sidebar = document.querySelector('.sidebar');
 const sidebarButtonHolder = document.querySelector('.sidebar-button-holder');
+// const socials = document.querySelector('social-links');
 
 // function isClickable(element){
 //     const computedStyle = window.getComputedStyle(element);
