@@ -5,6 +5,35 @@ const closeSidebarButton = document.querySelector('.close-sidebar');
 const sidebar = document.querySelector('.sidebar');
 const sidebarButtonHolder = document.querySelector('.sidebar-button-holder');
 
+const rootStyles = getComputedStyle(document.documentElement);
+// let primaryBackground = rootStyles.getPropertyValue('--primary-background')
+
+const toggleBtn = document.querySelector('.toggleMode');
+
+
+let lightMode = true;
+const handleToggleMode = ()=>{
+    if(lightMode){
+        document.documentElement.style.setProperty('--primary-background', 'hsl(0,0%,0%)');
+        document.documentElement.style.setProperty('--secondary-background-color', 'hsl(29, 100%, 95%)');
+        document.documentElement.style.setProperty('--primary-font-color', 'hsl(29, 100%, 95%)');
+        document.documentElement.style.setProperty('--secondary-font-color', 'hsl(0, 0%, 60%)');
+        document.querySelector('.main button').style.color = 'black';
+        lightMode = !lightMode;
+    } else{
+        document.documentElement.style.setProperty('--primary-background', 'hsl(29, 100%, 95%)');
+        document.documentElement.style.setProperty('--secondary-background-color', 'hsl(0, 0%, 0%)');
+        document.documentElement.style.setProperty('--primary-font-color', 'hsl(0, 0%, 0%)');
+        document.documentElement.style.setProperty('--secondary-font-color', 'hsl(0, 0%, 100%)');
+        document.querySelector('.main button').style.color = 'white';
+        lightMode = !lightMode;
+    }
+}
+
+toggleBtn.addEventListener('click', handleToggleMode);
+
+// const socials = document.querySelector('social-links');
+
 // function isClickable(element){
 //     const computedStyle = window.getComputedStyle(element);
 //     if(computedStyle.visibility !== 'visible' || computedStyle.display === 'none'){
