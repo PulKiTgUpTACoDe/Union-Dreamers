@@ -6,55 +6,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <section class="header center" id="top">
-      <h5>
-        The Knowledge Treasures<sup><i class="fa-solid fa-registered"></i></sup>
-      </h5>
-      <h1>Union<i class="fa-solid fa-clover toggleMode"></i>Dreamers</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Programs</a></li>
-          <i class="fa-solid fa-clover"></i>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#social">Socials</a></li>
-          <li><a href="#">Account</a></li>
-        </ul>
-      </nav>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <section class="header center">
+        <h5>The Knowledge Treasures<sup><i class="fa-solid fa-registered"></i></sup></h5>
+        <h1>Union<i class="fa-solid fa-clover"></i>Dreamers</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Programs</a></li>
+                <i class="fa-solid fa-clover"></i>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-button-holder">
+            <button class="open-sidebar"><i class="fa-solid fa-ellipsis"></i></button>
+        </div>
+    </section>
 
-      <div class="sidebar-button-holder">
-        <button class="open-sidebar">
-          <i class="fa-solid fa-ellipsis"></i>
-        </button>
-      </div>
+    <section class="box forms">
+        <div class="page login">
+            <a href="#" onclick=hidePage()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            <div class="form-content">
+                <header>Login</header>
+
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Login</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign-up form -->
+
+        <div class="page signup">
+            <div class="form-content">
+                <a href="#" onclick=hidePage()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+
+                <header>Signup</header>
+                
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm Password" class="password">
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Signup</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 
     <section class="sidebar">
-      <div class="sidebar-wrapper flex">
-        <nav>
-          <ul>
-            <div class="button-wrapper">
-              <button class="close-sidebar">
-                <i class="fa-solid fa-clover"></i>
-              </button>
-            </div>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Programs</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="#social">Socials</a></li>
-            <li><a href="#">Account</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="sidebar-wrapper flex">
+            <nav>
+                <ul>
+                    <div class="button-wrapper">
+                        <button class="close-sidebar"><i class="fa-solid fa-clover"></i></button>
+                    </div>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </nav>
+        </div>
     </section>
     <section class="main center">
       <h2>
