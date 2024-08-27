@@ -52,7 +52,7 @@ html {
   --secondary-background-color: hsl(0, 0%, 0%);
   --secondary-background-lighter: hsl(0, 0%, 30%);
 
-  --primary-font-color: hsl(0, 0%, 0);
+  --primary-font-color: hsl(0, 0%, 0%);
   --primary-font-lighter: hsl(0, 0%, 30%);
   --secondary-font-color: hsl(0, 0%, 100%);
   --secondary-font-darker: hsl(0, 0%, 70%);
@@ -98,8 +98,10 @@ body::-webkit-scrollbar {
 }
 h1,
 h2,
-h3 {
+h3,
+h5 {
   font-family: var(--primary-font-style);
+  color: var(--primary-font-color);
 }
 section {
   max-width: 100%;
@@ -303,7 +305,7 @@ section {
 .campus-info {
   padding: 5%;
   background-color: var(--secondary-background-color);
-  color: var(--secondary-font-color);
+  color: var(--primary-background);
   font-family: var(--secondary-font-style);
 }
 .campus-info .container {
@@ -341,11 +343,12 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 .courses .course-content {
-  --secondary-background-lighter: hsla(0, 0%, 50%, 0.1);
+  /* --secondary-background-lighter: hsla(0, 0%, 50%, 0.1); */
+  color: white;
   padding: 20px 10px;
   margin: 15%;
   position: relative;
-  background-color: var(--secondary-background-lighter);
+  background-color: rgb(17, 17, 17);
   border: 1px solid hsla(0, 0%, 50%, 0.2);
   border-radius: 10px;
   transition: all 0.3s linear;
@@ -388,7 +391,7 @@ section {
 .courses .course-content button {
   background-color: hsl(0, 0%, 100%);
   padding: 10px 20px;
-  color: var(--secondary-background-color);
+  color: black;
   border-radius: 50px;
   font-weight: 800;
 }
@@ -442,7 +445,7 @@ section {
 }
 .placebo button {
   background-color: var(--secondary-background-color);
-  color: #fff;
+  color: var(--primary-background);
   padding: 30px 50px;
   border-radius: 50px;
   font-size: var(--medium-font-size);
@@ -472,7 +475,7 @@ section {
 }
 .top-text button {
   background-color: var(--secondary-background-color);
-  color: #fff;
+  color: var(--primary-background);
   padding: 10px 20px;
   border-radius: 50px;
 }
@@ -513,13 +516,16 @@ section {
 .end-text div {
   align-self: end;
 }
-.end-text div button {
+.end-text div button{
   background-color: var(--secondary-background-color);
-  color: #fff;
+  color: var(--primary-background);
   padding: 20px 50px;
   place-self: start end;
   border-radius: 50px;
   margin-bottom: 10px;
+}
+.end-text h4{
+  color: var(--primary-font-color);
 }
 .end-text div button:hover {
   background-color: var(--secondary-background-lighter);
@@ -534,6 +540,7 @@ section {
   font-family: var(--secondary-font-style);
 }
 .grid > input {
+  color: var(--primary-font-color);
   height: 40px;
   border: 1px solid black;
   margin-top: 5px;
@@ -546,10 +553,10 @@ section {
   border-radius: 7px;
 }
 .grid > input:hover {
-  border: 2px solid black;
+  border: 2px solid var(--primary-font-color);
 }
 .grid > button:hover {
-  background-color: rgb(202, 191, 177);
+  background-color: rgb(165, 165, 165);
 }
 .subscribe .sidebar-button-holder {
   width: 90%;
@@ -625,6 +632,8 @@ section {
   position: fixed;
   right: 50px;
   bottom: 50px;
+  opacity: 0.5;
+  filter: invert(0.5);
 }
 
 .Top img {
@@ -637,6 +646,7 @@ section {
 /* SECTION 8 - FOOTER */
 /* ------------------ */
 .footer {
+  color: var(--primary-font-color);
   background-color: var(--primary-background);
   padding: 30px;
   grid-template-columns: 2fr 1fr 1fr;
@@ -679,6 +689,12 @@ section {
   }
   .header nav {
     display: none;
+  }
+  .Top{
+    height: 45px;
+    width: 45px;
+    right: 40px;
+    bottom: 40px;
   }
 }
 @media (max-width: 500px) {
@@ -783,5 +799,12 @@ section {
     width: 100%;
     grid-column: span 2;
     margin-bottom: 0;
+  }
+
+  .Top{
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    bottom: 20px;
   }
 }
