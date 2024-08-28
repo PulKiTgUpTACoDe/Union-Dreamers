@@ -142,6 +142,10 @@ section {
 /* ------------------ */
 /* SECTION 0 - LOGIN */
 /* ------------------ */
+marquee {
+  background-color: smokewhite;
+  align-items: center;
+}
 .no-scroll {
     overflow: hidden;
 }
