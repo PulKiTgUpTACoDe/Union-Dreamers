@@ -53,6 +53,7 @@ toggleBtn.addEventListener('click', handleToggleMode);
 
 
 // Show login/signup page
+
 function showPage() {
     document.querySelector('.box').style.display = 'flex';
     document.querySelector('.overlay').style.display = 'block';
@@ -74,6 +75,7 @@ function hidePage() {
 }
 
 // Toggle between login and signup forms
+
 document.querySelector('.signup-link').addEventListener('click', () => {
     document.querySelector('.forms').classList.add('show-signup');
 });
@@ -121,3 +123,55 @@ closeSidebarButton.addEventListener('click', ()=>{
     sidebar.style.transform = 'translateX(-100%)';
     sidebarButtonHolder.style.display = 'block';
 })
+
+// Login and sign up code
+
+document.getElementById('signUp').addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let email = document.getElementsByClassName('email').value;
+    let password = document.getElementsByClassName('password').value;
+    let c_pass = document.getElementsByClassName('Confirm-password').value;
+
+    if(email && password && password === c_pass){
+        fetch('/signup', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email, password})
+        }).then(response => response.json())
+        .then(data =>{
+            if(data.success){
+                document.getElementById('message').innerHTML = 'SignUp successfull'
+            } else {
+                document.getElementById('message').innerHTML = data.error;
+            }
+        })
+        .catch(error => console.error(error))
+    } else {
+        if (password !== c_pass) document.getElementById('message').innerHTML = 'Passwords do not match';
+        else document.getElementById('message').innerHTML = 'Please fill up all the fields';
+    }
+});
+
+document.getElementById('Login').addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let email = document.getElementsByClassName('email').value;
+    let password = document.getElementsByClassName('password').value;
+
+    if(email && password){
+        fetch('/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email, password})
+        }).then(response => response.json())
+        .then(data =>{
+            if(data.success){
+                document.getElementById('message').innerHTML = 'Login successfull'
+            } else {
+                document.getElementById('message').innerHTML = data.error;
+            }
+        })
+        .catch(error => console.error(error))
+    } else {
+        document.getElementById('message').innerHTML = 'Please fill up all the fields';
+    }
+});

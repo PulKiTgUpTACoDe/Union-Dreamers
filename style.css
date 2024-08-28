@@ -525,7 +525,7 @@ section {
 .courses .course-content i {
   font-size: var(--ultra-font-size);
   background: linear-gradient(135deg, pink, blue);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
