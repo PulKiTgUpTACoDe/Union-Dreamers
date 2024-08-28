@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aboutus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <marquee>Registrations on halt!</marquee>
+    <div class="overlay"></div>
+    <div class="msg"  onclick="showChatbot()">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M320-520q17 0 28.5-11.5T360-560q0-17-11.5-28.5T320-600q-17 0-28.5 11.5T280-560q0 17 11.5 28.5T320-520Zm160 0q17 0 28.5-11.5T520-560q0-17-11.5-28.5T480-600q-17 0-28.5 11.5T440-560q0 17 11.5 28.5T480-520Zm160 0q17 0 28.5-11.5T680-560q0-17-11.5-28.5T640-600q-17 0-28.5 11.5T600-560q0 17 11.5 28.5T640-520ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></a>
+    </div>
+    <div class="chatbot-container"> 
+      <div id="chatbot">
+          <div id="chat-output">
+            <div class="close"><a href="#" onclick=hideBot()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></div>
+          </div>
+          <input type="text" id="user-input" placeholder="Ask me something about our website..." />
+          <button onclick="submitChat()" class = "botbutt">Send</button>
+      </div>
+  </div>
+    <section class="header center">
+        <h5>The Knowledge Treasures<sup><i class="fa-solid fa-registered"></i></sup></h5>
+        <h1>Union<i class="fa-solid fa-clover toggleMode"></i>Dreamers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="#">Programs</a></li>
+                <i class="fa-solid fa-clover"></i>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#">Socials</a></li>
+                <li onclick="showPage()"><a href="#">Account</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-button-holder">
+            <button class="open-sidebar"><i class="fa-solid fa-ellipsis"></i></button>
+        </div>
+    </section>
+
+    <section class="box forms">
+        <div class="page login">
+            <a href="#" onclick=hidePage()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            <div class="form-content">
+                <header>Login</header>
+
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Login</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign-up form -->
+
+        <div class="page signup">
+            <div class="form-content">
+                <a href="#" onclick=hidePage()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+
+                <header>Signup</header>
+                
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm Password" class="password">
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Signup</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="sidebar">
+        <div class="sidebar-wrapper flex">
+            <nav>
+                <ul>
+                    <div class="button-wrapper">
+                        <button class="close-sidebar"><i class="fa-solid fa-clover"></i></button>
+                    </div>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="#">Programs</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Socials</a></li>
+                    <li><a href="#" onclick="showPage()">Account</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="box forms">
+        <div class="page login">
+            <a href="#" onclick=hidePage()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            <div class="form-content">
+                <header>Login</header>
+
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Login</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign-up form -->
+
+        <div class="page signup">
+            <div class="form-content">
+                <a href="#" onclick=hidePage()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+
+                <header>Signup</header>
+                
+                <form action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="email">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm Password" class="password">
+                    </div>
+
+                    <div class="field button-field">
+                        <button>Signup</button>
+                    </div>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container">
+          <div class="about-content">
+            <h1>About Us</h1>
+            <p>Welcome to Union Dreamers, where our mission is to revolutionize education through innovation and accessibility. Our goal is to provide high-quality educational resources and opportunities to learners around the globe, empowering them to achieve their full potential.</p>
+            
+            <div class="mission-goals">
+              <div class="goal">
+                <h2>Our Mission</h2>
+                <p>At Union Dreamers, our mission is to create a world where education is accessible to everyone, regardless of their location or background. We aim to deliver top-notch educational content and foster a community of passionate learners and educators.</p>
+              </div>
+              
+              <div class="goal">
+                <h2>Our Goals</h2>
+                <ul>
+                  <li>Provide a wide range of learning resources and modules that cater to different learning styles and needs.</li>
+                  <li>Establish partnerships with educational institutions to enhance the quality and credibility of our offerings.</li>
+                  <li>Promote lifelong learning and personal growth by offering interactive and engaging content.</li>
+                  <li>Ensure that our platform is inclusive and accessible to learners from diverse backgrounds.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer grid">
+        <div class="org-name">
+          <h4>The Knowledge Treasures</h4>
+          <h1>
+            <i class="fa-solid fa-clover"></i>U.D.<i
+              class="fa-solid fa-registered"
+            ></i>
+          </h1>
+        </div>
+        <ul>
+          <li class="head"><a href="#">Get help with</a></li>
+          <li><a href="#">Studying abroad</a></li>
+          <li><a href="#">Summer programs</a></li>
+          <li><a href="#">Professional programs</a></li>
+          <li><a href="#">Services packages</a></li>
+        </ul>
+        <ul>
+          <li class="head"><a href="#">Study abroad</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Terms of conditions</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+        <div class="social-links flex" id="social">
+          <a href="#"><i class="fa-solid fa-copyright"></i></a>
+          <p>All rights reserved</p>
+          <a href="https://x.com/TopUnis"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.instagram.com/topunis/"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/mandeep-mukundchand-gupta-2682302ab/"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </section>
+
+      <div class="Top">
+        <a href="#top">
+          <img src="/media/Back to top.jpeg" alt="Back to top" />
+        </a>
+      </div>
+
+      <script src="script.js"></script>   
+</body>
+</html>
