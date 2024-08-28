@@ -151,11 +151,12 @@ marquee {
 }
 
 .box {
-    font-family: inherit var(--secondary-font-style);
+    font-family: var(--secondary-font-style);
     height: 100vh;
     width: 100%;
     display: none;
-    position: absolute;
+    position: fixed;
+    backdrop-filter: blur(4px);
     transform: translate(-50%, -50%);
     justify-content: center;
     align-items: center;
@@ -163,7 +164,7 @@ marquee {
     z-index: 999;
     top: 50%;
     left: 50%;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 /* 
 .box {
@@ -208,7 +209,7 @@ marquee {
     width: 100%;
     border-radius: 6px;
     padding: 30px;
-    background-color: #fff;
+    background-color: var(--primary-background-darker);
 }
 
 .page.signup {
@@ -248,26 +249,28 @@ marquee {
     height: 100%;
     width: 100%;
     font-size: 16px;
-    font-weight: 400;
     border-radius: 6px;
     outline: none;
+    color: var(--secondary-font-color);
 }
 
 .field input{   
     padding: 0 15px;
-    border: 1px solid #cacaca;
+    border: 1px solid var(--primary-font-color);
     &:focus{
         border-bottom-width: 2px;
     }
 }
-
+.field input::placeholder {
+  color: var(--secondary-font-color);
+}
 .field button {
     color: #fff;
-    background-color: #0171d3;
+    background-color: var(--primary-font-color);
     transition: all 0.3s ease;
     cursor: pointer;
     &:hover{
-        
+        background-color: var(--primary-font-lighter);
     }
 }
 
@@ -280,6 +283,9 @@ marquee {
 .form-link span a{
     font-size: 14px;
     font-weight: 400;
+}
+.form-content link {
+  color: skyblue;
 }
 
 .box form a {
@@ -529,6 +535,7 @@ marquee {
 .courses .course-content i {
   font-size: var(--ultra-font-size);
   background: linear-gradient(135deg, pink, blue);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
