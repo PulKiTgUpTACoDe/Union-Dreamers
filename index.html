@@ -12,6 +12,18 @@
 <body>
     <marquee>Registrations on halt!</marquee>
     <div class="overlay"></div>
+    <div class="msg"  onclick="showChatbot()">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M320-520q17 0 28.5-11.5T360-560q0-17-11.5-28.5T320-600q-17 0-28.5 11.5T280-560q0 17 11.5 28.5T320-520Zm160 0q17 0 28.5-11.5T520-560q0-17-11.5-28.5T480-600q-17 0-28.5 11.5T440-560q0 17 11.5 28.5T480-520Zm160 0q17 0 28.5-11.5T680-560q0-17-11.5-28.5T640-600q-17 0-28.5 11.5T600-560q0 17 11.5 28.5T640-520ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></a>
+    </div>
+    <div class="chatbot-container"> 
+      <div id="chatbot">
+          <div id="chat-output">
+            <div class="close"><a href="#" onclick=hideBot()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></div>
+          </div>
+          <input type="text" id="user-input" placeholder="Ask me something about our website..." />
+          <button onclick="submitChat()" class = "botbutt">Send</button>
+      </div>
+  </div>
     <section class="header center">
         <h5>The Knowledge Treasures<sup><i class="fa-solid fa-registered"></i></sup></h5>
         <h1>Union<i class="fa-solid fa-clover toggleMode"></i>Dreamers</h1>
