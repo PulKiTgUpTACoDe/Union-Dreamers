@@ -210,7 +210,7 @@ function getBotResponse(input) {
     } else if (input.includes("how can i volunteer") || input.includes("volunteer") || input.includes("mentor")) {
         return "If you're interested in volunteering or becoming a mentor, you can sign up through our 'Volunteer' section. We welcome passionate individuals who want to make a difference in others' educational journeys.";
     } else if (input.includes("is there a mobile app") || input.includes("mobile app") || input.includes("app")) {
-        return "YCurrently, no. But we're working on it. You can download it from the Google Play Store or Apple App Store once available.";
+        return "Currently, no. But we're working on it. You can download it from the Google Play Store or Apple App Store once available.";
     } else if (input.includes("how often is new content added") || input.includes("new content") || input.includes("updates")) {
         return "We add new content regularly, with updates occurring weekly. Our goal is to keep the platform fresh and relevant with the latest educational resources.";
     } else if (input.includes("what makes union dreamers different") || input.includes("difference") || input.includes("unique")) {
