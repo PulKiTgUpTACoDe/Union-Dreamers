@@ -31,3 +31,33 @@ closeSidebarButton.addEventListener('click', ()=>{
     sidebar.style.transform = 'translateX(-100%)';
     sidebarButtonHolder.style.display = 'block';
 })
+
+function showPage() {
+    document.querySelector('.box').style.display = 'flex';
+    document.querySelector('.overlay').style.display = 'block';
+    sidebarWrapper.style.display = 'none';
+    document.body.classList.add('no-scroll');
+}
+
+function hidePage() {
+    document.querySelector('.box').style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+    sidebarWrapper.style.display = 'default';
+    document.body.classList.remove('no-scroll');
+
+     // Clear all input fields within the .box
+     const inputs = document.querySelectorAll('.box input');
+     inputs.forEach(input => {
+         input.value = '';  // Clear the input field
+     });
+}
+
+// Toggle between login and signup forms
+
+document.querySelector('.signup-link').addEventListener('click', () => {
+    document.querySelector('.forms').classList.add('show-signup');
+});
+
+document.querySelector('.login-link').addEventListener('click', () => {
+    document.querySelector('.forms').classList.remove('show-signup');
+});
